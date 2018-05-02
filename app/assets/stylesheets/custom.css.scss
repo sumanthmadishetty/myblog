@@ -1,0 +1,47 @@
+$navbar-default-bg: #302928;
+
+
+
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+#logo{
+    float: left;
+    color: red;
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+#logo:hover
+{
+    color: tomato;
+    
+}
+.center{
+    text-align: center
+}
+
+.jumbotron
+{
+    background-image: asset-url("star-trail-widescreen-2014-desktop-images");   
+    background-size: cover;
+    height: 550px;
+}
+.jumbotron h1
+{
+color: yellow;
+text-decoration-style: solid;
+text-align-last: center;
+letter-spacing: -2px
+
+}
+.btn-xlarge
+{
+    background-color: blue;
+    font-size: 2.0em;
+}
