@@ -1,41 +1,47 @@
-<% if @article.errors.any? %>
 
-    <% @article.errors.full_messages.each do |msg| %>
-     <ul>
-        <li><%=msg%></li>
-    </ul>
-    <%end%>
+<%= render "shared/errors",obj: @article%>
+
+<p>
+<div class = 'row'>
+    <div class ='col-xs-12'>    
+    
+        <%= form_with scope: :article , :html => {class: "form-horizontal" ,role: "form" }, url: articles_path, local: true do |t| %>
+            <div class = "form-group">
+                <div class = "control-label col-sm-2">
+                    <%=t.label :title %><br>
+                 </div>
+             <div class = "col-sm-8">
+    
+                <%= t.text_field :title , class: "form-control",placeholder: "Enter the title here", autofocus: true     %>
+            </div>
+          </div>  
+</p>
+
+<p>
+
+    <div class ="form-group">
+        <div class ="control-label col-sm-2">
+            <%=t.label :Description %><br>
+        </div>
+        <div class ="col-sm-8">
+            <%=t.text_area :description,rows: 10,class: 'form-control',placeholder: "Enter your Description here"%>
+        </div>    
+    </div>
+</p>
 
 
+<p>
+<div class ="form-group">
+    <div class = "col-sm-offset-2 col-sm-10">
+        <%=t.submit class: "btn btn-primary btn-lg"%>
+    </div>
+</div>    
+</p>
 
 
 <%end%>
-
-<p>
-
+    <div class="col-xs-4 col-xs-offset-4 btn btn-danger btn-lg">
 
 
-
-
-<%= form_with scope: :article, url: articles_path, local: true do |t| %>
-
-<%=t.label :title %><br>
-<%= t.text_field :title %>
-<br>
-</p>
-
-<p>
-
-<%=t.label :Description %><br>
-<%=t.text_area :description%>
-</p>
-
-
-<p>
-<%=t.submit%>
-</p>
-
-
-<%end%>
-<%= link_to "Back to articles list ", articles_path %>
-
+            [ <%= link_to "Cancel request and go back to articles list ", articles_path %> ]
+    </div>
